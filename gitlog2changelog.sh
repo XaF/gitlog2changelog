@@ -1,9 +1,9 @@
 #!/bin/bash
 #
 # gitlog2changelog bash script
-# v1.00, 2013-07-18
+# v1.01, 2015-03-24
 #
-# Copyright 2013       Raphaël Beamonte <raphael.beamonte@gmail.com>
+# Copyright 2013-2015  Raphaël Beamonte <raphael.beamonte@gmail.com>
 #
 # This program is free software: you can redistribute it and/or
 # modify it under the terms of the GNU General Public License Version
