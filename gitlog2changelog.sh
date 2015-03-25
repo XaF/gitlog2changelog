@@ -144,7 +144,7 @@ git ls-tree -r HEAD \
 	| sed -re 's/^.{53}//' \
 	| xargs echo -e \
 	| xargs file \
-	| grep ': .*text$' \
+	| grep ': .*text.*$' \
 	| sed -r -e 's/: .*//' \
 	| xargs --max-args=1 git --no-pager blame -w HEAD \
 	| sed -r -e 's/.*\((.*)[0-9]{4}-[0-9]{2}-[0-9]{2} .*/\1/' -e 's/ +$//' \
