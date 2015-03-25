@@ -155,6 +155,23 @@ git ls-tree -r HEAD \
 echo "#"
 
 #
+# If there is no tags, we can just generate the ChangeLog without
+# tag splitting
+#
+if [ $(git tag | wc -l) -eq 0 ]; then
+	# If of course we have commits
+	COMMITS="$(git log --oneline 2>&1)"
+	if [ -n "$COMMITS" ]; then
+		echo ""
+		echo ""
+		echo "Not versioned:"
+		echo "=============="
+		show_commits "$COMMITS"
+	fi
+	exit 0
+fi
+
+#
 # Routine to separate per tags (used as versions)
 #
 PTAG=
